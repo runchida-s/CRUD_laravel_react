@@ -1,0 +1,136 @@
+/* .App {
+  text-align: center;
+} */
+
+.jumbotron {
+  background-color: #5499C7  ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  
+}
+
+h1 {
+  color: #FFB300;
+  text-shadow: 3px 2px black;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 1;
+}
+
+h2 {
+  color: #FFB300;
+  text-shadow: 2px 2px black;
+  font-size: 30px;
+  line-height: 0.1;
+}
+
+p {
+  color: whitesmoke;
+  text-shadow: 1px 1px black;
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 2;
+}
+
+nav {
+  background-color: #E3F2FD;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 80px;
+  margin-bottom: 20px;
+  font-size: 23px;
+  font-weight: bold;
+  color: #154360;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  flex-direction: column;
+}
+
+input {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 7px 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 17px;
+  background-color: rgb(255, 249, 235);
+  width: 500px;
+}
+
+textarea {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 10px 15px;
+  margin-top: 5px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 17px;
+  background-color: rgb(255, 249, 235);
+  width: 510px;
+}
+
+.button-ok {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+button.ok {
+  background-color: #FFB300;
+  color: #154360;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 32px;
+}
+
+table {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #154360;
+  color: #ffffff;
+  
+}
+
+td {
+  
+  text-align: center;
+  
+}
+
+button.edit {
+  background-color: #FFB300;
+  color: #154360;
+  border-radius: 7px;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+button.delete {
+  background-color: #da0707;
+  color: #ffffff;
+  border-radius: 7px;
+  font-size: 14px;
+  padding: 10px 20px;
+}
