@@ -1,6 +1,53 @@
 import './App.css';
+import axios from 'axios';
+import React, { Component} from "react";
+import ItemsList from './items-listing.component';
 
-function App() {
+class App extends Component {
+
+  constructor(props) {
+    super(props)
+
+    // Setting up functions
+    this.onChangeItemName = this.onChangeItemName.bind(this);
+    this.onChangeItemLocation = this.onChangeItemLocation.bind(this);
+    this.onChangeItemReview = this.onChangeItemReview.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+
+    // Setting up state
+    this.state = {
+      name: '',
+      location: '',
+      review: ''
+    }
+  }
+
+  onChangeItemName(e) {
+    this.setState({name: e.target.value})
+  }
+
+  onChangeItemLocation(e) {
+    this.setState({location: e.target.value})
+  }
+
+  onChangeItemReview(e) {
+    this.setState({review: e.target.value})
+  }
+
+  onSubmit(e) {
+    e.preventDefault()
+     const item = {
+      name: this.state.name,
+      location: this.state.location,
+      review: this.state.review
+    };
+    axios.post('http://test.gth.intern.com/api/items', item)
+      .then(res => console.log(res.data));
+
+    this.setState({name: '', location: '', review: ''})
+  }
+  
+  render() {
   return (
     <div className="App">
 
@@ -16,13 +63,15 @@ function App() {
         <span>Add Restaurants & Cafes</span>
       </nav>
 
-      <form>
+      <form onSubmit={this.onSubmit}>
 
         <div className="form-group">
           <label>Restaurants or Cafes Name</label>
           <input 
             type="text" 
             name="name"
+            value={this.state.name}
+            onChange={this.onChangeItemName}
           />                       
         </div>
 
@@ -31,6 +80,8 @@ function App() {
           <input 
             type="text" 
             name="location"
+            value={this.state.location}
+            onChange={this.onChangeItemLocation}
           />                       
         </div>
 
@@ -39,12 +90,14 @@ function App() {
           <textarea 
             type="text" 
             name="review"
+            value={this.state.review}
+            onChange={this.onChangeItemReview}
           >
           </textarea>                       
         </div>
 
         <div className="button-ok">
-          <button className="ok">OK</button>                                              
+          <button className="ok" type="submit">OK</button>                                              
         </div>
 
       </form>      
@@ -57,28 +110,11 @@ function App() {
 
       <br></br>
 
-      <table>
-                        
-        <tr>
-          <th width="25%">Name</th>
-          <th width="30%">Location</th>
-          <th width="35%">Review</th>
-          <th width="5%">Edit</th>
-          <th width="5%">Delete</th>
-        </tr>
-
-        <tr>
-          <td>name</td>
-          <td>location</td>
-          <td>review</td>
-          <td><button className="edit">Edit</button></td>
-          <td><button className="delete">Delete</button></td>
-        </tr>
-                        
-      </table>
+      <ItemsList> </ItemsList>
 
     </div>
   );
+}
 }
 
 export default App;
