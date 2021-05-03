@@ -91,9 +91,9 @@ class App extends Component {
 
       this.setState({
         id:'',
-        patch:'',
-        game:'',
-        description:''
+        name:'',
+        location:'',
+        review:''
       })
 
   }
